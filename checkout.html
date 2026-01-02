@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout | EverydayMart</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>EverydayMart</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+  </nav>
+</header>
+
+<h2>Checkout</h2>
+
+<p>Total Amount:</p>
+<h3 id="total">$0.00</h3>
+
+<a id="paypalBtn" class="button" href="#" target="_blank">
+  Pay with PayPal
+</a>
+
+<script>
+  const total = localStorage.getItem("cartTotal") || "0.00";
+  document.getElementById("total").innerText = "$" + total;
+
+  const paypalEmail = "paypal@example.com";
+  document.getElementById("paypalBtn").href =
+    `https://www.paypal.com/paypalme/${paypalEmail}/${total}`;
+</script>
+
+</body>
+</html>
